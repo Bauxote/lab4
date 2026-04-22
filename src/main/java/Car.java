@@ -1,10 +1,8 @@
-import java.util.Objects;
-
-import textCo.Word;
+import textCo.Text;
 
 public class Car {
 
-    public Word name;
+    public Text name;
     public int productionYear;
     public float topSpeed;
     public float acceleration;
@@ -19,7 +17,7 @@ public class Car {
      * @param acceleration   0-100 km/h time in seconds
      * @param numberOfDoors  number of doors
      */
-    public Car(Word name, int productionYear, float topSpeed, float acceleration, int numberOfDoors) {
+    public Car(Text name, int productionYear, float topSpeed, float acceleration, int numberOfDoors) {
         this.name = name;
         this.productionYear = productionYear;
         this.topSpeed = topSpeed;
@@ -31,7 +29,7 @@ public class Car {
      * Checks whether this car is equal to another object.
      * Two cars are considered equal if all fields match.
      */
-    @Override
+        @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
@@ -41,9 +39,8 @@ public class Car {
             numberOfDoors == other.numberOfDoors &&
             Float.compare(topSpeed, other.topSpeed) == 0 &&
             Float.compare(acceleration, other.acceleration) == 0 &&
-            Objects.equals(name, other.name);
+            this.name.toString().trim().equals(other.name.toString().trim());
     }
-
     /**
      * Returns a string representation of this car.
      */
